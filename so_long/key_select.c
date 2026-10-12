@@ -6,7 +6,7 @@
 /*   By: daparici <daparici@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 17:37:52 by daparici          #+#    #+#             */
-/*   Updated: 2026/10/12 00:19:58 by daparici         ###   ########.fr       */
+/*   Updated: 2026/10/12 18:40:37 by daparici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,14 @@ void	key_x(int keycode, t_map *map)
 
 void	key_y(int keycode, t_map *map)
 {
-	if (keycode == 119 && map->split_map[map->py - 1][map->px] != '1' &&
-		map->split_map[map->py -1][map->px] != 'E')
+	if (keycode == 119 && map->split_map[map->py - 1][map->px] != '1' && map->split_map[map->py -1][map->px] != 'E')
 	{
 		if (map->split_map[map->py - 1][map->px] == 'O')
 		{
 			map->exit_open = 0;
 			closewin(map);
 		}
-		if (map->split_map[map->py - 1][map->px] == 'T' ||
-			map->split_map[map->py - 1][map->px] == 't')
+		if (map->split_map[map->py - 1][map->px] == 'T' || map->split_map[map->py - 1][map->px] == 't')
 			closewin(map);
 		if (map->split_map[map->py -1][map->px] == 'C')
 		{
@@ -41,8 +39,7 @@ void	key_y(int keycode, t_map *map)
 		map->moves++;
 		print_moves(map->moves);
 	}
-	if (keycode == 115 && map->split_map[map->py + 1][map->px] != '1' &&
-		map->split_map[map->py + 1][map->px] != 'E')
+	if (keycode == 115 && map->split_map[map->py + 1][map->px] != '1' && map->split_map[map->py + 1][map->px] != 'E')
 		key_y_2(keycode, map);
 }
 
@@ -53,8 +50,7 @@ void	key_y_2(int keycode, t_map *map)
 		map->exit_open = 0;
 		closewin(map);
 	}
-	if (map->split_map[map->py + 1][map->px] == 'T' ||
-		map->split_map[map->py + 1][map->px] == 't')
+	if (map->split_map[map->py + 1][map->px] == 'T' || map->split_map[map->py + 1][map->px] == 't')
 		closewin(map);
 	if (map->split_map[map->py + 1][map->px] == 'C')
 	{

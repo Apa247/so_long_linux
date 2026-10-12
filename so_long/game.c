@@ -6,7 +6,7 @@
 /*   By: daparici <daparici@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 16:17:28 by daparici          #+#    #+#             */
-/*   Updated: 2026/10/12 06:06:11 by daparici         ###   ########.fr       */
+/*   Updated: 2026/10/12 18:39:34 by daparici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,15 +19,7 @@ int	render_next_frame(t_map *map)
 	if (map->n_enemies != 0)
 		move_enemies(map);
 	if ((map->keycode_c == 119 || map->keycode_c == 115))
-	{
 		move_goku_y(map);
-		/*
-		if (map->supergoku == 0)
-			move_goku_y(map);
-		else
-			move_supergoku_y(map);
-		*/
-	}
 	if (map->keycode_c == 97 || map->keycode_c == 100)
 		move_goku_x(map);
 	if (map->n_collect == 0 && map->n_exit != 0)
@@ -74,8 +66,7 @@ int	key_select(int keycode, t_map *map)
 	}
 	if (map->n_frames > 1400 && map->ki == 0)
 	{
-		if (keycode == 119 || keycode == 115
-			|| keycode == 97 || keycode == 100)
+		if (keycode == 119 || keycode == 115 || keycode == 97 || keycode == 100)
 		{
 			key_y(keycode, map);
 			key_x(keycode, map);
@@ -141,22 +132,3 @@ void	put_imagen_xpm(t_map *map, char *adress_img, int x, int y)
 	mlx_destroy_image(map->mlx, img);
 }
 
-/* void	put_imagen_xpm(t_map *map, char *adress_img, int x, int y)
-{
-	void	*img;
-	int		res;
-
-	res = 47;
-	map->width = (res * y);
-	map->height = (res * x);
-	img = mlx_xpm_file_to_image(map->mlx, adress_img,
-			&res, &res);
-	if (!img)
-	{
-		ft_printf("ERROR\n");
-		exit(1);
-	}
-	mlx_put_image_to_window(map->mlx, map->mlx_window, img,
-		map->width, map->height);
-	//mlx_destroy_image(map->mlx, img);
-} */

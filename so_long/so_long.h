@@ -6,7 +6,7 @@
 /*   By: daparici <daparici@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/22 18:16:01 by daparici          #+#    #+#             */
-/*   Updated: 2026/10/12 06:20:13 by daparici         ###   ########.fr       */
+/*   Updated: 2026/10/12 18:39:14 by daparici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,6 @@
 # include "./Libft/libft.h"
 # include "./GetNextLine/get_next_line.h"
 # include "./printf/ft_printf.h"
-//# include <OpenGL/gl.h>
-//# include <OpenGl/glu.h>
-//# include <GLUT/glut.h>
 
 typedef struct s_map
 {

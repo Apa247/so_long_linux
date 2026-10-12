@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_map_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: daparici <daparici@student.42.fr>          +#+  +:+       +#+        */
+/*   By: daparici <daparici@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 14:31:21 by daparici          #+#    #+#             */
-/*   Updated: 2022/09/20 13:10:53 by daparici         ###   ########.fr       */
+/*   Updated: 2026/10/12 18:38:07 by daparici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,15 +69,11 @@ int	check_map_error(t_map *map)
 		while (map->split_map[i][++k])
 		{
 			ft_count_params(map, i, k);
-			if (map->split_map[0][k] != '1' ||
-				map->split_map[map->n_row - 1][k] != '1'
-				|| map->split_map[i][0] != '1' ||
-				map->split_map[i][map->n_col - 1] != '1')
+			if (map->split_map[0][k] != '1' || map->split_map[map->n_row - 1][k] != '1'
+				|| map->split_map[i][0] != '1' || map->split_map[i][map->n_col - 1] != '1')
 				error_msg("Map must be surrounded by walls!");
-			if (map->split_map[i][k] != '0' && map->split_map[i][k] != '1' &&
-					map->split_map[i][k] != 'P' && map->split_map[i][k] != 'C'
-					&& map->split_map[i][k] != 'E' &&
-					map->split_map[i][k] != 'T')
+			if (map->split_map[i][k] != '0' && map->split_map[i][k] != '1' && map->split_map[i][k] != 'P' 
+				&& map->split_map[i][k] != 'C' && map->split_map[i][k] != 'E' && map->split_map[i][k] != 'T')
 				error_msg("Invalid map, check parameters");
 		}
 	}

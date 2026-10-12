@@ -6,7 +6,7 @@
 /*   By: daparici <daparici@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/27 17:35:57 by daparici          #+#    #+#             */
-/*   Updated: 2026/10/12 06:12:53 by daparici         ###   ########.fr       */
+/*   Updated: 2026/10/12 18:41:39 by daparici         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,8 @@ void	put_goku_map(t_map *map)
 {
 	if (map->keycode_c == 119 || map->keycode_c == 115)
 		put_goku_map_y(map);
-	//if (map->supergoku == 1 && (map->keycode_c == 119 || map->keycode_c == 115))
-		//put_supergoku_map_y(map);
 	if (map->keycode_c == 97 || map->keycode_c == 100)
 		put_goku_map_x(map);
-	//if (map->supergoku == 1 && (map->keycode_c == 97 || map->keycode_c == 100))
-		//put_supergoku_map_x(map);
 }
 
 void	put_goku_map_x(t_map *map)
@@ -29,8 +25,7 @@ void	put_goku_map_x(t_map *map)
 	if (map->keycode_c == 97 && map->n_frames == 800)
 	{
 		map->px--;
-		if (map->split_map[map->py][map->px] == 'T'
-			|| map->split_map[map->py][map->px] == 't')
+		if (map->split_map[map->py][map->px] == 'T' || map->split_map[map->py][map->px] == 't')
 			closewin(map);
 		if (map->split_map[map->py][map->px] == 'C')
 			map->ki = 1;
@@ -50,8 +45,7 @@ void	put_goku_map_x(t_map *map)
 	if (map->keycode_c == 100 && map->n_frames == 800)
 	{
 		map->px++;
-		if (map->split_map[map->py][map->px] == 'T'
-			|| map->split_map[map->py][map->px] == 't')
+		if (map->split_map[map->py][map->px] == 'T' || map->split_map[map->py][map->px] == 't')
 			closewin(map);
 		if (map->split_map[map->py][map->px] == 'C')
 			map->ki = 1;
@@ -75,8 +69,7 @@ void	put_goku_map_y(t_map *map)
 	if (map->keycode_c == 119)
 	{
 		map->py--;
-		if (map->split_map[map->py][map->px] == 'T'
-			|| map->split_map[map->py][map->px] == 't')
+		if (map->split_map[map->py][map->px] == 'T' || map->split_map[map->py][map->px] == 't')
 			closewin(map);
 		if (map->split_map[map->py][map->px] == 'C')
 			map->ki = 1;
@@ -99,8 +92,7 @@ void	put_goku_map_y(t_map *map)
 	if (map->keycode_c == 115)
 	{
 		map->py++;
-		if (map->split_map[map->py][map->px] == 'T'
-			|| map->split_map[map->py][map->px] == 't')
+		if (map->split_map[map->py][map->px] == 'T' || map->split_map[map->py][map->px] == 't')
 			closewin(map);
 		if (map->split_map[map->py][map->px] == 'C')
 			map->ki = 1;
